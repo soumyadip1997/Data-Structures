@@ -1,0 +1,25 @@
+
+p=input()
+n,m=(p.split(' '))
+n=int(n)
+m=int(m)
+a=[0]*m
+matrix = [[0]*m for i in range(n)] 
+matrix1 = [[0]*n for i in range(m)] 
+
+  
+# For user input 
+for i in range(n):          # A for loop for row entries 
+    a=(input().split(' '))
+    #print(a)
+    for j in range(m):   
+         #print(a)# A for loop for column entries 
+         matrix[i][j]=(a[j])
+    
+for i in range(m):
+    for j in range(n):
+        matrix1[i][j]=matrix[j][i]
+for i in range(m):
+    for j in range(n):
+        print(matrix1[i][j],end=' ')
+    print()
