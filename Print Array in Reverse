@@ -1,0 +1,9 @@
+
+size=int(input())
+p=[0]*size
+for j in range(0,size):
+    p[j]=int(input())
+k=size-1
+while(k>=0):
+    print(p[k])
+    k-=1
