@@ -1,0 +1,65 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov  8 17:44:00 2019
+
+@author: Soumyadip Roy
+"""
+class stack1:
+    def __init__(self,a):
+        self.top=-1
+        self.s=[0]*a
+    def push(self,p):
+        self.top+=1
+        
+        self.s[self.top]=p
+    def pop(self):
+        temp=self.s[self.top]
+        self.top-=1
+    def isempty(self):
+        if self.top==-1:
+            return True
+        else:
+            return False
+    def print(self):
+        for i in range(self.top):
+            print(self.s[i],end=' ')
+a=input()
+len1=len(a)
+p=stack1(len1)
+p1=stack1(len1)
+p2=stack1(len1)
+for i in range(len(a)):
+    if a[i]=='(':
+        
+        p.push('(')
+        #print('inside push {0}'.format(p.s))
+        #p.print()
+    elif a[i]==')':
+        p.pop()
+        #p.print()
+    
+    if a[i]=='{':
+        
+        p1.push('{')
+        #print('inside push {0}'.format(p.s))
+        #p.print()
+    elif a[i]=='}':
+        p1.pop()
+        #p.print()
+    if a[i]=='[':
+        
+        p2.push('[')
+        #print('inside push {0}'.format(p.s))
+        #p.print()
+    elif a[i]==']':
+        p2.pop()
+        #p.print()
+    
+    
+    
+
+    #print('inside pop {0}'.format(p.top))
+if p1.isempty() and p2.isempty() and p.isempty():
+    print('balanced')
+else:
+    print('not balanced')    
